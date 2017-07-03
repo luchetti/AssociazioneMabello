@@ -20,6 +20,10 @@ html,body{ height: 100%;}
 .fa-input {
   font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+#mainContainer{
+	height: 100%;
+	 width: 100%;
+	 }
 .parallax {
     /* The image used */
     /*00000background-image: url("#{resource['images/parallax-1.jpg']}");

@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<div id="newArticleSection" class="w3-modal">
+		<div class="w3-modal-content w3-card-4">
+			<div class="w3-container w3-teal">
+				<span onclick="$('#newArticleSection').css('display','none')"
+					class="w3-button w3-display-topright">&#xd7;</span>
+				<h3>Nuovo articolo</h3>
+			</div>
+			<h:form class="w3-container w3-padding">
+				<label>Titolo</label>
+				<h:inputText value="#{gestoreArticoli.titolo}" class="w3-input" />
+				<label>Contenuto</label>
+				<!--<h:inputTextarea value="#{gestoreArticoli.contenuto}" class="w3-border" id="newArticleTextarea" />-->
+				<rich:editor value="#{gestoreArticoli.contenuto}" width="100%"
+					toolbar="CustomToolbar">
+					<f:facet name="config">
+						toolbar_CustomToolbar:
+        				[
+        					{ name: 'document', items : [ 'NewPage','Preview' ] },
+        					{ name: 'clipboard', items : [ 'Cut','Copy','Paste','-','Undo','Redo' ] },
+					        { name: 'editing', items : [ 'Find','Replace','-','SelectAll' ] },
+        					{ name: 'insert', items : [ 'Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar' ] },
+                			<!-- '/', -->
+					        { name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
+					        { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote' ] },
+					        { name: 'tools', items : [ 'Maximize' ] }
+						]
+        			</f:facet>
+				</rich:editor>
+				<div class="w3-container">
+					<button class="w3-btn w3-left w3-red" type="reset">Cancella</button>
+					<h:commandButton class="w3-btn w3-right w3-teal"
+						action="#{gestoreArticoli.createNewArticle()}" value="Procedi"
+						type="submit" />
+				</div>
+			</h:form>
+		</div>
+	</div>
+
+</ui:composition>

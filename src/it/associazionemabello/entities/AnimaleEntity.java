@@ -28,6 +28,11 @@ public class AnimaleEntity {
 	@Column(name="animali_cover")
 	byte[] coverImage;
 
+	@Override
+	public String toString(){
+		return "[Id, "+this.id+"; Nome, "+this.name+"; Descrizione, "+this.description+";]";
+	}
+	
 	public int getId() {
 		return id;
 	}

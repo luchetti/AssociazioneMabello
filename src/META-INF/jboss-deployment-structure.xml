@@ -1,11 +1,14 @@
 <jboss-deployment-structure>
 	<deployment>
 		<dependencies>
-            <module name="org.picketlink.core" metainf="import" annotations="true" />
+            <module name="org.picketlink" metainf="import" annotations="true" />
+             <module name="org.picketlink.core" metainf="import" annotations="true" />
             <module name="org.picketlink.core.api" metainf="import" annotations="true" />
             <module name="org.picketlink.idm" metainf="import" annotations="true" />
             <module name="org.picketlink.idm.api" metainf="import" annotations="true" />
             <module name="org.picketlink.common" metainf="import" annotations="true" />
+            <module name="org.picketlink.idm" metainf="import" annotations="true" />
+            <module name="org.picketlink.idm.simple.schema" metainf="import" annotations="true" />
 		</dependencies>
 	</deployment>
 </jboss-deployment-structure>

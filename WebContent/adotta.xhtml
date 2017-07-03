@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+
+<ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
+	<ui:define name="mainContent">
+		
+		<div class="w3-container w3-margin w3-teal">
+			<h2>Canielli... canielli everywhere</h2>
+		</div>
+		<ui:repeat var="animale" value="#{serviceDao.getAnimaliListAsc()}" varStatus="listIndex">
+			<div class="w3-third w3-padding w3-margin-bottom">
+				<div class="w3-hover-shadow">
+					<div class="w3-container w3-teal w3-border">
+						<h3>#{animale.name}</h3>
+					</div>
+					<div class="w3-container w3-border">
+						<o:graphicImage value="#{animale.coverImage}" dataURI="true" />
+					</div>
+					<div class="w3-container w3-light-grey w3-border">
+						<p>#{animale.description}</p>
+					</div>
+				</div>
+			</div>
+		</ui:repeat>
+		
+		<!-- <ui:repeat var="animale" value="#{serviceDao.getAnimaliListAsc()}" varStatus="listIndex">
+			<h:outputText value="&lt;div class='w3-row-padding w3-center'&gt;" escape="false" rendered="#{listIndex.index %2==0}" />
+				<div class="w3-half w3-padding">
+					<div class="w3-hover-shadow">
+						<div class="w3-container w3-teal">
+							<h3>#{animale.name}</h3>
+						</div>
+						<div class="w3-container">
+							<o:graphicImage value="#{animale.coverImage}" dataURI="true" />
+						</div>
+						<div class="w3-container">
+							<p>#{animale.description}</p>
+						</div>
+					</div>
+				</div>
+				<h:outputText value="&lt;/div&gt;" escape="false"
+					rendered="#{listIndex.last or (listIndex.index + 1) %2 == 0}" />
+			</ui:repeat> -->
+		
+	</ui:define>
+</ui:composition>
+
+</html>

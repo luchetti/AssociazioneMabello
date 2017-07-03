@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+
+	<div id="newAnimalSection" class="w3-modal">
+		<div class="w3-modal-content w3-card-4">
+			<div class="w3-container w3-teal">
+				<span onclick="$('#newAnimalSection').css('display','none')"
+					class="w3-button w3-display-topright">&#xd7;</span>
+				<h3>Nuovo animale</h3>
+			</div>
+			<h:form class="w3-container w3-padding" enctype="multipart/form-data">
+				<label>Nome</label>
+				<h:inputText value="#{gestoreAnimali.name}" class="w3-input" />
+
+				<label>Descrizione</label>
+				<h:inputTextarea value="#{gestoreAnimali.content}"
+					class="w3-input w3-border" />
+
+				<label>Carica una foto</label>
+				<o:inputFile value="#{gestoreAnimali.imageAsPart}" />
+
+				<div class="w3-container">
+					<button class="w3-btn w3-left w3-red" type="reset">Cancella</button>
+					<h:commandButton class="w3-btn w3-right w3-teal"
+						action="#{gestoreAnimali.createNewAnimal()}" value="Procedi"
+						type="submit" />
+				</div>
+			</h:form>
+		</div>
+	</div>
+
+</ui:composition>

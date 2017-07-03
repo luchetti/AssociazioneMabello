@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+
+<ui:composition>
+
+	<div id="linkMenu"	class="w3-bar-item w3-bar-block w3-red w3-hide w3-hide-large">
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			<h:link outcome="index.xhtml" value="Home" class="w3-bar-item w3-button" />
+			<h:link outcome="scopriMabello.xhtml" value="Scopri Mabello" class="w3-bar-item w3-button" />
+			<h:link outcome="adotta.xhtml" value="Adotta un cane" class="w3-bar-item w3-button" />
+			<h:link outcome="donaMabello.xhtml" value="Dona a Mabello" class="w3-bar-item w3-button" />
+		</div>
+	</div>
+	<div id="socialMenu" class="w3-bar-item w3-bar-block w3-blue w3-hide w3-hide-large">
+		<a href="#"	class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+		<span class="fa fa-instagram fa-2x" />
+		</a>
+		<a	href="https://www.facebook.com/Associazione-Mabello-1081475771868383/" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+		 	<span class="fa fa-facebook-square fa-2x" />
+		</a>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+		 	<span class="fa fa-google-plus-square fa-2x" />
+		</a>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+		 	<span class="fa fa-twitter-square fa-2x" />
+		</a>
+		 
+		<a	href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="menuToggle('linkMenu')">
+		 	<span class="fa fa-ellipsis-v" /><!-- &#9776; -->
+		</a>
+		<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="menuToggle('socialMenu')">
+		 	<span class="fa fa-share-alt" />
+		</a>
+	</div>
+
+</ui:composition> 
+</html>

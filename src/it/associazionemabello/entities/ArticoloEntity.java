@@ -26,10 +26,12 @@ public class ArticoloEntity {
 	@Column(name="articoli_contenuto")
 	String content;
 	
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="articoli_creationTime")
 	Date creationTime;
 	
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="articoli_lastEditTime")
 	Date lastEditTime;

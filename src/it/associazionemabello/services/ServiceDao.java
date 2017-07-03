@@ -26,6 +26,12 @@ public class ServiceDao implements Serializable {
 	@Inject
 	AnimaliDao animali;
 	
+	@Inject
+	CurrentUser login;
+	
+	public void doLogin(){
+		login.login();
+	}
 	public List<ArticoloEntity> getArticoliListDesc(){
 		return articoli.retrieveArticlesList("desc");
 	}

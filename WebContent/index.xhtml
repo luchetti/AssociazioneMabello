@@ -1,123 +1,25 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:b="http://bootsfaces.net/ui"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:o="http://omnifaces.org/ui"
-	xmlns:of="http://omnifaces.org/functions"
-	xmlns:rich="http://richfaces.org/rich">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head>
-	<h:outputStylesheet library="css" name="w3.css" />
-	<h:outputStylesheet library="font-awesome" name="css/font-awesome.css" />
-	<h:outputStylesheet library="css" name="custom.css" />
-	<h:outputScript library="js" name="jquery-3.2.1.js" />
-	<h:outputScript library="js" name="custom.js" target="body" />
-</h:head>
-<h:body class="w3-white">
-
-	<div class="firstDiv parallax w3-display-container" id="firstDiv">
-		<div class="w3-display-left w3-half w3-hide-small">
-			<div class="w3-panel w3-leftbar w3-text-yellow w3-padding-small">
-				<p class="w3-xlarge w3-serif w3-opacity">
-					<i>"Mabello combatte il fenomeno del randagismo per dare un
-						segnale di speranza e giustizia per i nostri amici a quattro
-						zampe. Mabello e' il Batman che da tempo i cani ci chiedoono"</i>
-				</p>
-				<p>Antonio Marchese - Mabello Cofounder</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="w3-container" id="mainContainer"
-		style="height: 100%; width: 100%">
-		<div class="w3-row" id="mainContent">
-			<div class="w3'container w3-topbar w3-border w3-card-4">
-				<h:link outcome="index.xhtml?faces-redirect=true" value="Home"
-					class="w3-bar-item w3-button" />
-				<div class="w3-dropdown-hover">
-					<button class="w3-button w3-hide-small">Dicono di noi</button>
-					<div
-						class="w3-dropdown-content w3-bar-block w3-card-4 w3-hide-small">
-						<a href="#" class="w3-bar-item w3-button">Chi siamo</a> <a
-							href="#" class="w3-bar-item w3-button">La nostra missione</a> <a
-							href="#" class="w3-bar-item w3-button">Contattaci</a>
-					</div>
-				</div>
-				<a href="#" class="w3-bar-item w3-button w3-hide-small">Adotta
-					un cane</a> <a href="#" class="w3-bar-item w3-button w3-hide-small">Dona
-					na cos</a> <a href="#"
-					class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span
-					class="fa fa-instagram fa-2x" /> </a> <a
-					href="https://www.facebook.com/Associazione-Mabello-1081475771868383/"
-					class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span
-					class="fa fa-facebook-square fa-2x" /> </a> <a href="#"
-					class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span
-					class="fa fa-google-plus-square fa-2x" /> </a> <a href="#"
-					class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span
-					class="fa fa-twitter-square fa-2x" /> </a> <a
-					href="javascript:void(0)"
-					class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-					onclick="menuToggle('sideMenu')"><span class="fa fa-ellipsis-v" />
-					<!-- &#9776; --></a> <a href="javascript:void(0)"
-					class="w3-bar-item w3-button w3-right w3-hide-large"
-					onclick="menuToggle('socialMenu')"><span
-					class="fa fa-share-alt" /></a>
-			</div>
-			<div id="sideMenu"
-				class="w3-bar-item w3-bar-block w3-red w3-hide w3-hide-large">
-				<div class="w3-dropdown-content w3-bar-block w3-card-4">
-					<a href="#" class="w3-bar-item w3-button">Chi siamo</a> <a href="#"
-						class="w3-bar-item w3-button">La nostra missione</a> <a href="#"
-						class="w3-bar-item w3-button">Contattaci</a>
-				</div>
-				<a href="#" class="w3-bar-item w3-button">Adotta un cane</a> <a
-					href="#" class="w3-bar-item w3-button">Dona na cos</a>
-			</div>
-			<div id="socialMenu"
-				class="w3-bar-item w3-bar-block w3-blue w3-hide w3-hide-large">
-				<a href="#" class="w3-bar-item w3-button "><span
-					class="fa fa-instagram fa-2x" /> Instagram</a> <a href="#"
-					class="w3-bar-item w3-button "><span
-					class="fa fa-facebook-square fa-2x" /> Facebook</a> <a href="#"
-					class="w3-bar-item w3-button "><span
-					class="fa fa-google-plus-square fa-2x" /> Google Plus</a> <a href="#"
-					class="w3-bar-item w3-button "><span
-					class="fa fa-twitter-square fa-2x" /> Twitter</a>
-			</div>
-		</div>
-		<div class="w3-row-padding">
-
-			<button class="w3-btn w3-orange w3-half w3-margin-bottom w3-margin-top"
-				onclick="$('#newArticleSection').css('display','block');">Nuovo
-				articolo</button>
-
-			<button class="w3-btn w3-blue w3-half w3-margin-bottom w3-margin-top"
-				onclick="$('#newAnimalSection').css('display','block');">Nuovo
-				caniello</button>
-			
-			<div class="w3-row-padding">
-				<div class="w3-container">
-					<h:form>
-						<label>Login</label>
-						<h:commandButton value="login" action="#{loginAction.login()}" />
-					</h:form>
-				</div>
-			</div>
-
-
+	<ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
+		<ui:define name="mainContent">
 			<ui:repeat var="articolo" value="#{serviceDao.getArticoliListDesc()}">
 				<div class="w3-row">
 					<div class="w3-card-2 w3-margin-bottom">
 						<div class="w3-container w3-teal w3-padding w3-border">
-							<h:form>
+							<h:form rendered="#{identity.isLoggedIn()}">
 								<h:commandButton
 									class="w3-button fa fa-trash fa-2x w3-right w3-hover-teal w3-hover-border-red w3-hover-text-red"
 									action="#{serviceDao.deleteArticle(articolo.id)}"
 									value="&#xf014;" />
-								<button class="w3-button fa fa-pencil fa-2x w3-right" />
+								<h:commandButton
+									class="w3-button fa fa-pencil fa-2x w3-right w3-hover-teal w3-hover-border-yellow w3-hover-text-yellow"
+									action="#{serviceDao.deleteArticle(articolo.id)}"
+									value="&#xf040;" />
+								
 							</h:form>
 							<h2>#{articolo.title}</h2>
 						</div>
@@ -138,101 +40,7 @@
 
 				</div>
 			</ui:repeat>
-		</div>
-
-		<div class="w3-row">
-			<div class="w3-container w3-margin-bottom w3-teal">
-				<h2>Canielli... canielli everywhere</h2>
-			</div>
-			<ui:repeat var="animale" value="#{serviceDao.getAnimaliListAsc()}"
-				varStatus="listIndex">
-				<h:outputText value="&lt;div class='w3-row-padding w3-center'&gt;"
-					escape="false" rendered="#{listIndex.index %2==0}" />
-				<div class="w3-half w3-padding">
-					<div class="w3-hover-shadow">
-						<div class="w3-container w3-teal">
-							<h3>#{animale.name}</h3>
-						</div>
-						<div class="w3-container">
-							<o:graphicImage value="#{animale.coverImage}" dataURI="true" />
-						</div>
-						<div class="w3-container">
-							<p>#{animale.description}</p>
-						</div>
-					</div>
-				</div>
-				<h:outputText value="&lt;/div&gt;" escape="false"
-					rendered="#{listIndex.last or (listIndex.index + 1) %2 == 0}" />
-			</ui:repeat>
-		</div>
-
-
-		<div id="newArticleSection" class="w3-modal">
-			<div class="w3-modal-content w3-card-4">
-				<div class="w3-container w3-teal">
-					<span onclick="$('#newArticleSection').css('display','none')"
-						class="w3-button w3-display-topright">&#xd7;</span>
-					<h3>Nuovo articolo</h3>
-				</div>
-				<h:form class="w3-container w3-padding">
-					<label>Titolo</label>
-					<h:inputText value="#{gestoreArticoli.titolo}" class="w3-input" />
-					<label>Contenuto</label>
-					<!--<h:inputTextarea value="#{gestoreArticoli.contenuto}" class="w3-border" id="newArticleTextarea" />-->
-					<rich:editor value="#{gestoreArticoli.contenuto}" width="100%"
-						toolbar="CustomToolbar">
-						<f:facet name="config">
-						toolbar_CustomToolbar:
-        				[
-        					{ name: 'document', items : [ 'NewPage','Preview' ] },
-        					{ name: 'clipboard', items : [ 'Cut','Copy','Paste','-','Undo','Redo' ] },
-					        { name: 'editing', items : [ 'Find','Replace','-','SelectAll' ] },
-        					{ name: 'insert', items : [ 'Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar' ] },
-                			<!-- '/', -->
-					        { name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
-					        { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote' ] },
-					        { name: 'tools', items : [ 'Maximize' ] }
-						]
-        			</f:facet>
-					</rich:editor>
-					<div class="w3-container">
-						<button class="w3-btn w3-left w3-red" type="reset">Cancella</button>
-						<h:commandButton class="w3-btn w3-right w3-teal"
-							action="#{gestoreArticoli.createNewArticle()}" value="Procedi"
-							type="submit" />
-					</div>
-				</h:form>
-			</div>
-		</div>
-
-		<div id="newAnimalSection" class="w3-modal">
-			<div class="w3-modal-content w3-card-4">
-				<div class="w3-container w3-teal">
-					<span onclick="$('#newAnimalSection').css('display','none')"
-						class="w3-button w3-display-topright">&#xd7;</span>
-					<h3>Nuovo animale</h3>
-				</div>
-				<h:form class="w3-container w3-padding"
-					enctype="multipart/form-data">
-					<label>Nome</label>
-					<h:inputText value="#{gestoreAnimali.name}" class="w3-input" />
-
-					<label>Descrizione</label>
-					<h:inputTextarea value="#{gestoreAnimali.content}"
-						class="w3-input w3-border" />
-
-					<label>Carica una foto</label>
-					<o:inputFile value="#{gestoreAnimali.imageAsPart}" />
-
-					<div class="w3-container">
-						<button class="w3-btn w3-left w3-red" type="reset">Cancella</button>
-						<h:commandButton class="w3-btn w3-right w3-teal"
-							action="#{gestoreAnimali.createNewAnimal()}" value="Procedi"
-							type="submit" />
-					</div>
-				</h:form>
-			</div>
-		</div>
-	</div>
-</h:body>
+		</ui:define>
+	</ui:composition>
+	
 </html>

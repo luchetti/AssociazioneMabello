@@ -1,31 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:rich="http://richfaces.org/rich">
 
 	<h:head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-	<h:outputStylesheet library="css" name="w3.css"/>	
-	<h:outputStylesheet library="font-awesome" name="css/font-awesome.css" />
-	<h:outputStylesheet library="css" name="custom.css"/>	
-	<h:outputScript library="js" name="jquery-3.2.1.js" />
-	<h:outputScript library="js" name="custom.js" target="body"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+		<h:outputStylesheet library="css" name="w3.css"/>	
+		<h:outputStylesheet library="font-awesome" name="css/font-awesome.css" />
+		<h:outputStylesheet library="css" name="custom.css"/>	
+		<h:outputScript library="js" name="jquery-3.2.1.js" />
+		<h:outputScript library="js" name="custom.js" target="body"/>
 	</h:head>
 	
 	<h:body class="w3-white">
-		<!-- <div class="w3-container w3-teal w3-top" id="header" rendered="false">
-			<ui:insert name ="header">
-				<ui:include src="/WEB-INF/templates/components/header.xhtml" />
-			</ui:insert>
-		</div> -->
-		<ui:insert name="firstDiv">
+		
+		<div class="firstDiv parallax w3-display-container" id="firstDiv">
 			<ui:include src="/WEB-INF/templates/components/firstDiv.xhtml"></ui:include>
-		</ui:insert>
-		<div class="w3-white w3-container" id="mainContainer" style="height: 100%; width: 100%">
-			<ui:insert name="mainContainer">
-				<ui:include src="/WEB-INF/templates/components/mainContainer.xhtml"></ui:include>
-			</ui:insert>
+		</div>
+		
+		<div class="w3-container" id="mainContainer" style="height: 100%; width: 100%">
+			<div class="w3-row">
+				<ui:include src="/WEB-INF/templates/components/header.xhtml"></ui:include>
+			</div>
+			<div class="w3-row-padding">
+				<ui:include src="/WEB-INF/templates/components/smallScreenMenu.xhtml"></ui:include>
+			</div>
+			<div class="w3-row-padding">
+			<button class="w3-btn w3-orange w3-half w3-margin-bottom w3-margin-top" onclick="$('#newArticleSection').css('display','block');">
+				Nuovo articolo
+			</button>
+
+			<button class="w3-btn w3-blue w3-half w3-margin-bottom w3-margin-top" onclick="$('#newAnimalSection').css('display','block');">
+				Nuovo caniello
+			</button>
+			</div>
+			
+			<div class="w3-row-padding">
+				<ui:insert name="mainContent" />
+			</div>
+			
+
+			<ui:include src="/WEB-INF/templates/components/newAnimal.xhtml"></ui:include>
+			<ui:include src="/WEB-INF/templates/components/newArticle.xhtml"></ui:include>
+			
 		</div>
 	</h:body>
 </html>
