@@ -1,0 +1,6 @@
+#ignora cartelle eclipse
+.settings/
+.classpath
+.project
+.tern-project
+build/

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition>
+	<div class="w3'container w3-topbar w3-border w3-card-12">
+		<a href="#" class="w3-bar-item w3-button">Home</a>
+		<!-- <input type="text" class="w3-bar-item w3-input w3-hide-small w3-hide-medium" placeholder="Search.." />
+  		<a href="#" class="w3-bar-item w3-button w3-green w3-hide-small w3-hide-medium">Go</a> -->
+		<div class="w3-dropdown-hover">
+			<button class="w3-button w3-hide-small">Dicono di noi</button>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4 w3-hide-small">
+				<a href="#" class="w3-bar-item w3-button">Chi siamo</a>
+				<a href="#"	class="w3-bar-item w3-button">La nostra missione</a>
+				<a href="#"	class="w3-bar-item w3-button">Contattaci</a>
+			</div>
+		</div>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small">Adotta un cane</a>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small">Dona na cos</a>
+		
+		<a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span class="fa fa-instagram fa-2x" /> </a>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span	class="fa fa-facebook-square fa-2x" /> </a>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span class="fa fa-google-plus-square fa-2x" /> </a>
+		<a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><span class="fa fa-twitter-square fa-2x" /> </a>
+		
+		<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="menuToggle('sideMenu')"><span class="fa fa-ellipsis-v" /> <!-- &#9776; --></a>
+		<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="menuToggle('socialMenu')"><span class="fa fa-share-alt" /></a>
+	</div>
+	<div id="sideMenu" class="w3-bar-item w3-bar-block w3-red w3-hide w3-hide-large">
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			<a href="#" class="w3-bar-item w3-button">Chi siamo</a>
+			<a href="#"	class="w3-bar-item w3-button">La nostra missione</a>
+			<a href="#"	class="w3-bar-item w3-button">Contattaci</a>
+		</div>
+  		<a href="#" class="w3-bar-item w3-button">Adotta un cane</a>
+  		<a href="#" class="w3-bar-item w3-button">Dona na cos</a>
+	</div>
+	<div id="socialMenu" class="w3-bar-item w3-bar-block w3-blue w3-hide w3-hide-large">
+		<a href="#" class="w3-bar-item w3-button "><span class="fa fa-instagram fa-2x" /> Instagram</a>
+		<a href="#" class="w3-bar-item w3-button "><span class="fa fa-facebook-square fa-2x" /> Facebook</a>
+		<a href="#" class="w3-bar-item w3-button "><span class="fa fa-google-plus-square fa-2x" /> Google Plus</a>
+		<a href="#" class="w3-bar-item w3-button "><span class="fa fa-twitter-square fa-2x" /> Twitter</a>
+	</div>
+</ui:composition>
+</html>

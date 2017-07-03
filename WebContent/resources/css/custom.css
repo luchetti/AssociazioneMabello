@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+html,body{ height: 100%;}
+
+
+.firstDiv{
+	background-image: url("#{resource['images/parallax-2.jpg']}");
+	background-size: 250px;
+	background-repeat: no-repeat;
+	/*background-color: #b3dcd9;*/
+	color: white;
+	height: 100%;
+	z-index:1;
+	display:none;
+}
+
+/*p{
+	text-shadow:1px 1px 0 #444;
+}*/
+.fa-input {
+  font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.parallax {
+    /* The image used */
+    /*00000background-image: url("#{resource['images/parallax-1.jpg']}");
+
+    /* Set a specific height */
+    /*min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img {
+    width: 100%;
+    /*height: auto;
+    /*width: auto\9; /* ie8 */
+}
