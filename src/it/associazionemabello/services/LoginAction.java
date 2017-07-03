@@ -1,6 +1,5 @@
 package it.associazionemabello.services;
 
-import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -11,11 +10,6 @@ import org.picketlink.Identity.AuthenticationResult;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.PartitionManager;
 import org.picketlink.idm.RelationshipManager;
-import org.picketlink.idm.model.basic.BasicModel;
-import org.picketlink.idm.model.basic.Group;
-import org.picketlink.idm.model.basic.Role;
-import org.picketlink.idm.model.basic.User;
-import org.picketlink.idm.query.IdentityQueryBuilder;
 
 @Named
 @RequestScoped

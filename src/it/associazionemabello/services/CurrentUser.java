@@ -1,8 +1,5 @@
 package it.associazionemabello.services;
 
-import java.util.Map;
-
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -11,7 +8,6 @@ import org.picketlink.Identity;
 import org.picketlink.Identity.AuthenticationResult;
 import org.picketlink.authentication.levels.Level;
 
-import com.lambdaworks.crypto.SCryptUtil;
 import java.io.Serializable;
 
 @Named

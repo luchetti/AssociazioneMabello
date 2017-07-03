@@ -3,21 +3,7 @@ package it.associazionemabello.startup;
 import javax.annotation.PostConstruct;
 import javax.ejb.Startup;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.picketlink.idm.IdentityManager;
-import org.picketlink.idm.PartitionManager;
-import org.picketlink.idm.RelationshipManager;
-import org.picketlink.idm.config.IdentityConfigurationBuilder;
-import org.picketlink.idm.model.basic.Grant;
-import org.picketlink.idm.model.basic.Group;
-import org.picketlink.idm.model.basic.GroupMembership;
-import org.picketlink.idm.model.basic.Role;
-import org.picketlink.idm.model.basic.User;
-
-import it.associazionemabello.entities.UserEntity;
-import it.associazionemabello.interfaces.Eager;
 
 @Named
 @Startup

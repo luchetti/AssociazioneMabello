@@ -37,6 +37,7 @@
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>2.2.14</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -95,6 +96,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>AssociazioneMabello</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
 			<resource>

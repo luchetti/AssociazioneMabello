@@ -2,27 +2,18 @@ package it.associazionemabello.authentication;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.picketlink.Identity;
-import org.picketlink.Identity.AuthenticationResult;
 import org.picketlink.annotations.PicketLink;
 import org.picketlink.authentication.BaseAuthenticator;
 import org.picketlink.authentication.event.LoggedInEvent;
 import org.picketlink.authentication.event.LoginFailedEvent;
-import org.picketlink.authentication.event.AlreadyLoggedInEvent;
 import org.picketlink.credential.DefaultLoginCredentials;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.PartitionManager;
 import org.picketlink.idm.RelationshipManager;
-import org.picketlink.idm.model.basic.Grant;
-import org.picketlink.idm.model.basic.Group;
-import org.picketlink.idm.model.basic.GroupMembership;
-import org.picketlink.idm.model.basic.Role;
-import org.picketlink.idm.model.basic.User;
 
 import it.associazionemabello.entities.UserEntity;
 import it.associazionemabello.services.daos.SecurityDao;
