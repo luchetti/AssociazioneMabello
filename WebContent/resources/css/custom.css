@@ -1,44 +1,65 @@
 @CHARSET "UTF-8";
 
-html,body{ height: 100%;}
-
-
-.firstDiv{
-	background-image: url("#{resource['images/parallax-2.jpg']}");
-	background-size: 250px;
-	background-repeat: no-repeat;
-	/*background-color: #b3dcd9;*/
-	color: white;
+html, body {
 	height: 100%;
-	z-index:1;
-	display:none;
 }
 
+@media screen and (max-width: 600px) {
+	.firstDiv {
+		height: 100%;
+		z-index: 1;
+		display: none;
+	}
+	.bottomArrow, .logo{
+	
+		visibility: visible;
+	
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.firstDiv {
+		background-image: url("#{resource['images/parallax-2.jpg']}");
+		background-size: 250px;
+		background-repeat: no-repeat;
+		/*background-color: #b3dcd9;*/
+		color: white;
+		height: 100%;
+		z-index: 1;
+		display: none;
+	}
+	.bottomArrow, .logo{
+		visibility: visible;
+	}
+}
 /*p{
 	text-shadow:1px 1px 0 #444;
 }*/
 .fa-input {
-  font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-#mainContainer{
+
+#mainContainer {
 	height: 100%;
-	 width: 100%;
-	 }
+	width: 100%;
+}
+
 .parallax {
-    /* The image used */
-    /*00000background-image: url("#{resource['images/parallax-1.jpg']}");
+	/* The image used */
+	/*00000background-image: url("#{resource['images/parallax-1.jpg']}");
 
     /* Set a specific height */
-    /*min-height: 500px; 
+	/*min-height: 500px; 
 
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
 img {
-    width: 100%;
-    /*height: auto;
+	width: 100%;
+	/*height: auto;
     /*width: auto\9; /* ie8 */
 }
