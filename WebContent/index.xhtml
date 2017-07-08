@@ -1,22 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
-		<ui:define name="mainContent">
-		
-		<div class="w3-container w3-teal">
-			<!-- <h:graphicImage lib="images" name=""/> -->
-		
+ <ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
+	<ui:define name="mainContent">
+		<div class="w3-display-left w3-hide-medium w3-hide-large"
+			id="menu-icon">
+			<span class="fa fa-arrow-circle-o-right fa-2x w3-text-teal"
+				id="sideBarOpen" onclick="menuOpen()" />
 		</div>
-		
-		
-		
-		
-		
-			<ui:repeat var="articolo" value="#{serviceDao.getArticoliListDesc()}">
+		<h:graphicImage value="/resources/images/mabello-banner.jpg" />
+
+		<div class="w3-row-padding">
+			<div
+				class="w3-container w3-border w3-border-light-grey w3-large w3-sand w3-card-2 w3-margin-bottom">
+				Associazione mabello</div>
+			<ui:repeat var="articolo" value="#{gestoreArticoli.articoli}">
 				<div class="w3-row">
 					<div class="w3-card-2 w3-margin-bottom">
 						<div class="w3-container w3-teal w3-padding w3-border">
@@ -49,7 +50,12 @@
 
 				</div>
 			</ui:repeat>
-		</ui:define>
-	</ui:composition>
-	
+		</div>
+
+
+
+
+	</ui:define>
+</ui:composition>
+
 </html>

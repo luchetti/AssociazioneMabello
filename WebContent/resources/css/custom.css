@@ -35,6 +35,22 @@ html, body {
 /*p{
 	text-shadow:1px 1px 0 #444;
 }*/
+#menu-icon{
+	margin-left:-8px;
+	 -webkit-animation: menuIcon 54s infinite alternate;
+	 animation: menuIcon 4s infinite alternate;
+	-webkit-animation-timing-function: ease-in;
+	animation-timing-function: ease-in;
+}
+@keyframes menuIcon {
+    from {opacity: 1;}
+    to {opacity: 0.125;}
+}
+@-webkit-keyframes menuIcon {
+    from {opacity: 1;}
+    to {opacity: 0.125;}
+}
+
 .fa-input {
 	font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

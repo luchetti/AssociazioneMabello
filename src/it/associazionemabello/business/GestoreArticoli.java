@@ -1,12 +1,13 @@
 package it.associazionemabello.business;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import it.associazionemabello.entities.ArticoloEntity;
+import it.associazionemabello.services.ArticoloEntity;
 import it.associazionemabello.services.ServiceDao;
 
 @Named
@@ -16,6 +17,7 @@ public class GestoreArticoli {
 	@Inject
 	ServiceDao dao;
 	
+	private List<ArticoloEntity> listaArticoli;
 	private String titolo;
 	private String contenuto;
 	
@@ -43,7 +45,16 @@ public class GestoreArticoli {
 	public void setContenuto(String contenuto) {
 		this.contenuto = contenuto;
 	}
-	
+	public List<ArticoloEntity> getArticoli(){
+		if(this.listaArticoli==null){
+			this.listaArticoli=dao.getArticoliListDesc();
+		}
+		return this.listaArticoli;
+	}
+	public void setArticoli(List <ArticoloEntity> lista){
+		this.listaArticoli=lista;
+		
+	}
 	
 	
 }

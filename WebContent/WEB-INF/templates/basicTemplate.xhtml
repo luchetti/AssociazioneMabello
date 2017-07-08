@@ -23,15 +23,11 @@
 		<div class="firstDiv parallax w3-display-container w3-teal" id="firstDiv">
 			<ui:include src="/WEB-INF/templates/components/firstDiv.xhtml"></ui:include>
 		</div>
-		
-		<div class="w3-container" id="mainContainer" style="height: 100%; width: 100%">
+
+		<ui:include src="/WEB-INF/templates/components/sideBar.xhtml"></ui:include>
+
+		<div id="mainContainer">
 			<!-- <div class="w3-row">
-				<ui:include src="/WEB-INF/templates/components/header.xhtml"></ui:include>
-			</div> -->
-			<div class="w3-row-padding">
-				<ui:include src="/WEB-INF/templates/components/smallScreenMenu.xhtml"></ui:include>
-			</div>
-			<div class="w3-row-padding">
 			<button class="w3-btn w3-orange w3-half w3-margin-bottom w3-margin-top" onclick="$('#newArticleSection').css('display','block');">
 				Nuovo articolo
 			</button>
@@ -39,9 +35,9 @@
 			<button class="w3-btn w3-blue w3-half w3-margin-bottom w3-margin-top" onclick="$('#newAnimalSection').css('display','block');">
 				Nuovo caniello
 			</button>
-			</div>
+			</div> -->
 			
-			<div class="w3-row-padding">
+			<div class="w3-row">
 				<ui:insert name="mainContent" />
 			</div>
 			

@@ -39,7 +39,7 @@ function fadeAway(){
 		//if($scrollBar>($divBottom/4)){
 
 		if($scrollBar>($divBottom-1)){
-			$("#firstDiv").hide();
+			//$("#firstDiv").hide();
 			//$("#header").slideDown(1000);
 		}else{
 			$("#firstDiv").slideUp(1500);
@@ -47,6 +47,13 @@ function fadeAway(){
 		}
 		$("#mainContainer").delay(1500).css('opacity', '100');
 	}
+}
+
+function menuOpen(){
+	$("#sideBar").css('display', 'block');
+}
+function menuClose(){
+	$("#sideBar").css('display', 'none');
 }
 
 function displayFirstDiv(){
