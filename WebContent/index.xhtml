@@ -6,7 +6,7 @@
 
 <ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
 	<ui:define name="mainContent">
-		<div class="w3-row w3-teal w3-top">
+		<div class="w3-row w3-teal">
 			<div
 				class="w3-left w3-padding w3-button w3-hover-text-teal w3-hover-white">
 				<span class="fa fa-bars fa-2x w3-hover-text-teal"
@@ -17,8 +17,12 @@
 					onclick="$(loginForm).show()" />
 			</div>
 		</div>
-
-		<h:graphicImage value="/resources/images/mabello-banner.jpg" />
+		<div class="w3-row">
+			<div class="w3-col">
+				<h:graphicImage value="/resources/images/mabello-banner.jpg" />	
+			</div>
+		</div>
+		
 
 		<div class="w3-row-padding">
 			<div
@@ -72,34 +76,24 @@
 			</div>
 		</div>
 
-		<div id="loginForm" class="w3-modal">
-			<div class="w3-modal-content w3-animate-zoom">
-				<div class="w3-container w3-teal w3-center w3-large">
+		<div id="loginForm" class="w3-modal w3-card-4">
+			<div class="w3-modal-content w3-animate-zoom w3-margin">
+				<div class="w3-teal w3-center w3-large w3-card-4">
 					<span onclick="$('#loginForm').css('display','none')"
 						class="w3-button w3-display-topright">&times;</span>
-					<h2>Login</h2>
+					<div class="w3-large"><p><i class="fa fa-key fa-2x"></i></p><p>Login</p></div>
 				</div>
-				<div class="w3-container w3-sand w3-border w3-border-light-grey">
-					<h:form>
+				<div class="w3-container w3-sand w3-padding-top">
+					<h:form class="w3-container w3-border w3-border-light-grey">
 						<div class="w3-section">
 							<label>Username</label>
-							<div class="w3-col s2" style="width: 50px">
-								<span class="fa fa-user fa-2x" />
-							</div>
-							<div class="w3-col w3-rest">
-								<h:inputText class="w3-input" value="#{loginCredentials.userId}" />
-							</div>
+							<h:inputText class="w3-input" value="#{loginCredentials.userId}" />
 						</div>
 						<div class="w3-section">
 							<label>Password</label>
-							<div class="w3-col s2" style="width: 50px">
-								<span class="fa fa-key fa-2x" />
-							</div>
-							<div class="w3-col w3-rest">
-								<h:inputSecret class="w3-input" value="#{loginCredentials.password}" />
-							</div>
+							<h:inputSecret class="w3-input" value="#{loginCredentials.password}" />
 						</div>
-						<div class="w3-section">
+						<div class="w3-section w3-border-top w3-border-light-grey">
 							<h:commandButton value="Login" class="w3-button w3-teal" action="#{loginAction.login()}" />
 						</div>
 					</h:form>
