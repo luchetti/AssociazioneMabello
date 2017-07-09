@@ -9,14 +9,14 @@ $(window).scroll(function(){
 
 //Custom Functions
 
-function menuToggle($name) {
-	
+/*function menuToggle($name) {
+
 	/*if($name=="socialMenu"){
 		toggleSmallScreenMenu("socialMenu","linkMenu");
 	}else{
 		toggleSmallScreenMenu("linkMenu", "socialMenu");
-	}*/
-	
+	}*//*
+
 	var x = document.getElementById($name);
 	if (x.className.indexOf("w3-show") == -1) {
 		x.className += " w3-show";
@@ -24,11 +24,11 @@ function menuToggle($name) {
 		x.className = x.className.replace(" w3-show", "");
 	}
 }
-
+*/
 function toggleSmallScreenMenu($choosenMenu,$otherMenu){
 	$("."+$choosenMenu).toggleClass('w3-show');
 	$("."+$otherMenu).removeClass('w3-show');
-	
+
 }
 
 function fadeAway(){
@@ -52,6 +52,10 @@ function fadeAway(){
 function menuOpen(){
 	$("#sideBar").css('display', 'block');
 }
+function menuToggle(){
+	$("#sideBar").fadeToggle("swing");
+}
+
 function menuClose(){
 	$("#sideBar").css('display', 'none');
 }

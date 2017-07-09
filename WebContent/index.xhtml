@@ -4,57 +4,110 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 
- <ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
+<ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
 	<ui:define name="mainContent">
-		<div class="w3-display-left w3-hide-medium w3-hide-large"
-			id="menu-icon">
-			<span class="fa fa-arrow-circle-o-right fa-2x w3-text-teal"
-				id="sideBarOpen" onclick="menuOpen()" />
+		<div class="w3-row w3-teal w3-top">
+			<div
+				class="w3-left w3-padding w3-button w3-hover-text-teal w3-hover-white">
+				<span class="fa fa-bars fa-2x w3-hover-text-teal"
+					onclick="menuToggle()" />
+			</div>
+			<div class="w3-right w3-padding w3-button w3-hover-white">
+				<span class="fa fa-sign-in fa-2x w3-hover-text-teal"
+					onclick="$(loginForm).show()" />
+			</div>
 		</div>
+
 		<h:graphicImage value="/resources/images/mabello-banner.jpg" />
 
 		<div class="w3-row-padding">
 			<div
 				class="w3-container w3-border w3-border-light-grey w3-large w3-sand w3-card-2 w3-margin-bottom">
-				Associazione mabello</div>
-			<ui:repeat var="articolo" value="#{gestoreArticoli.articoli}">
-				<div class="w3-row">
-					<div class="w3-card-2 w3-margin-bottom">
-						<div class="w3-container w3-teal w3-padding w3-border">
-							<h:form rendered="#{identity.isLoggedIn()}">
-								<h:commandButton
-									class="w3-button fa fa-trash fa-2x w3-right w3-hover-teal w3-hover-border-red w3-hover-text-red"
-									action="#{serviceDao.deleteArticle(articolo.id)}"
-									value="&#xf014;" />
-								<h:commandButton
-									class="w3-button fa fa-pencil fa-2x w3-right w3-hover-teal w3-hover-border-yellow w3-hover-text-yellow"
-									action="#{serviceDao.deleteArticle(articolo.id)}"
-									value="&#xf040;" />
-							</h:form>
-							<h2>#{articolo.title}</h2>
-						</div>
-						<div class="w3-container w3-border w3-padding">
-							<h:outputText escape="false" value="#{articolo.content}" />
-						</div>
-						<div class="w3-container w3-row w3-light-grey w3-border">
-							<div class="w3-col w3-right-align">
-								<p>
-									Ultima modifica
-									<h:outputText value="#{articolo.lastEditTime}">
-										<f:convertDateTime pattern="HH:mm, dd/MM/yyyy" />
-									</h:outputText>
-								</p>
+				Associazione mabello
+				<ui:repeat var="articolo" value="#{serviceDao.articoliListDesc}">
+					<div class="w3-row">
+						<div class="w3-card-2 w3-margin-bottom">
+							<div class="w3-container w3-teal w3-padding w3-border">
+								<h:form rendered="#{identity.isLoggedIn()}">
+									<h:commandButton
+										class="w3-button fa fa-trash fa-2x w3-right w3-hover-teal w3-hover-border-red w3-hover-text-red"
+										action="#{serviceDao.deleteArticle(articolo.id)}"
+										value="&#xf014;" />
+									<h:commandButton
+										class="w3-button fa fa-pencil fa-2x w3-right w3-hover-teal w3-hover-border-yellow w3-hover-text-yellow"
+										action="#{serviceDao.deleteArticle(articolo.id)}"
+										value="&#xf040;" />
+								</h:form>
+								<h2>#{articolo.title}</h2>
+							</div>
+							<div class="w3-container w3-border w3-padding">
+								<h:outputText escape="false" value="#{articolo.content}" />
+							</div>
+							<div class="w3-container w3-row w3-light-grey w3-border">
+								<div class="w3-col w3-right-align">
+									<p>
+										Ultima modifica
+										<h:outputText value="#{articolo.lastEditTime}">
+											<f:convertDateTime pattern="HH:mm, dd/MM/yyyy" />
+										</h:outputText>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
 
-				</div>
-			</ui:repeat>
+				</ui:repeat>
+			</div>
+		</div>
+		<div class="w3-row">
+			<div class="w3-bottom w3-bar w3-teal">
+				<h:link outcome="index.xhtml" value="Home"
+					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
+				<h:link outcome="scopriMabello.xhtml" value="Scopri Mabello"
+					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
+				<h:link outcome="adotta.xhtml" value="Adotta un cane"
+					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
+				<h:link outcome="donaMabello.xhtml" value="Dona"
+					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
+			</div>
 		</div>
 
+		<div id="loginForm" class="w3-modal">
+			<div class="w3-modal-content w3-animate-zoom">
+				<div class="w3-container w3-teal w3-center w3-large">
+					<span onclick="$('#loginForm').css('display','none')"
+						class="w3-button w3-display-topright">&times;</span>
+					<h2>Login</h2>
+				</div>
+				<div class="w3-container w3-sand w3-border w3-border-light-grey">
+					<h:form>
+						<div class="w3-section">
+							<label>Username</label>
+							<div class="w3-col s2" style="width: 50px">
+								<span class="fa fa-user fa-2x" />
+							</div>
+							<div class="w3-col w3-rest">
+								<h:inputText class="w3-input" value="#{loginCredentials.userId}" />
+							</div>
+						</div>
+						<div class="w3-section">
+							<label>Password</label>
+							<div class="w3-col s2" style="width: 50px">
+								<span class="fa fa-key fa-2x" />
+							</div>
+							<div class="w3-col w3-rest">
+								<h:inputSecret class="w3-input" value="#{loginCredentials.password}" />
+							</div>
+						</div>
+						<div class="w3-section">
+							<h:commandButton value="Login" class="w3-button w3-teal" action="#{loginAction.login()}" />
+						</div>
+					</h:form>
+				</div>
 
 
-
+			</div>
+		</div>
 	</ui:define>
 </ui:composition>
 
