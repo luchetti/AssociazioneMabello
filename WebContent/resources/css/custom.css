@@ -10,10 +10,22 @@ html, body {
 		z-index: 1;
 		display: none;
 	}
-	.bottomArrow, .logo{
-	
+	.bottomArrow, .logo {
 		visibility: visible;
-	
+	}
+	.parallax {
+		height: 200px;
+		
+		/* The image used*/ 
+		background-image: url("#{resource['images/mabello-logo-600.gif']}");
+		/* Set a specific height */
+		/*min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 }
 
@@ -28,29 +40,54 @@ html, body {
 		z-index: 1;
 		display: none;
 	}
-	.bottomArrow, .logo{
+	.bottomArrow, .logo {
 		visibility: visible;
+	}
+	.parallax {
+		min-height: 500px;
+		/* The image used 
+	background-image: url("#{resource['images/parallax-4.jpg']}");*/
+		/* Set a specific height */
+		/*min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 }
 /*p{
 	text-shadow:1px 1px 0 #444;
 }*/
-#menu-icon{
-	margin-left:-8px;
-	 -webkit-animation: menuIcon 54s infinite alternate;
-	 animation: menuIcon 4s infinite alternate;
+#menu-icon {
+	margin-left: -8px;
+	-webkit-animation: menuIcon 54s infinite alternate;
+	animation: menuIcon 4s infinite alternate;
 	-webkit-animation-timing-function: ease-in;
 	animation-timing-function: ease-in;
 }
-@keyframes menuIcon {
-    from {opacity: 1;}
-    to {opacity: 0.125;}
-}
-@-webkit-keyframes menuIcon {
-    from {opacity: 1;}
-    to {opacity: 0.125;}
+
+@
+keyframes menuIcon {
+	from {opacity: 1;
 }
 
+to {
+	opacity: 0.125;
+}
+
+}
+@
+-webkit-keyframes menuIcon {
+	from {opacity: 1;
+}
+
+to {
+	opacity: 0.125;
+}
+
+}
 .fa-input {
 	font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -58,20 +95,6 @@ html, body {
 #mainContainer {
 	height: 100%;
 	width: 100%;
-}
-
-.parallax {
-	/* The image used */
-	/*00000background-image: url("#{resource['images/parallax-1.jpg']}");
-
-    /* Set a specific height */
-	/*min-height: 500px; 
-
-    /* Create the parallax scrolling effect */
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 img {

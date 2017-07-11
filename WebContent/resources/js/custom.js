@@ -7,8 +7,22 @@ $(window).scroll(function(){
 	fadeAway();
 });
 
-//Custom Functions
 
+
+
+//Custom Functions
+function donateTo($name){
+	if(sessionStorage.getItem("donateTo")===null){
+			sessionStorage.setItem("donateTo","beni");
+	}
+	var $lastDivActive=sessionStorage.getItem("donateTo");
+	
+	if($lastDivActive !== $name){
+		$("#"+$lastDivActive).fadeOut();
+		$("#"+$name).fadeIn();
+		sessionStorage.setItem("donateTo",$name);
+	}
+}
 /*function menuToggle($name) {
 
 	/*if($name=="socialMenu"){
@@ -48,7 +62,9 @@ function fadeAway(){
 		$("#mainContainer").delay(1500).css('opacity', '100');
 	}
 }
-
+function toggleMenu($name){
+	$("#"+$name).fadeToggle("swing");
+}
 function menuOpen(){
 	$("#sideBar").css('display', 'block');
 }

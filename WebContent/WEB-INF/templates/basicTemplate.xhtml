@@ -13,12 +13,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 		<h:outputStylesheet library="css" name="w3.css"/>	
 		<h:outputStylesheet library="font-awesome" name="css/font-awesome.css" />
-		<h:outputStylesheet library="css" name="custom.css"/>	
+		<h:outputStylesheet library="css" name="custom.css" target="body"/>	
 		<h:outputScript library="js" name="jquery-3.2.1.js" />
 		<h:outputScript library="js" name="custom.js" target="body"/>
 	</h:head>
 	
-	<h:body class="w3-white">
+	<h:body class="w3-blue-gray">
 		
 		<div class="firstDiv parallax w3-display-container w3-teal" id="firstDiv">
 			<ui:include src="/WEB-INF/templates/components/firstDiv.xhtml"></ui:include>
@@ -26,7 +26,6 @@
 
 		<ui:include src="/WEB-INF/templates/components/sideBar.xhtml"></ui:include>
 
-		<div id="mainContainer">
 			<!-- <div class="w3-row">
 			<button class="w3-btn w3-orange w3-half w3-margin-bottom w3-margin-top" onclick="$('#newArticleSection').css('display','block');">
 				Nuovo articolo
@@ -36,15 +35,11 @@
 				Nuovo caniello
 			</button>
 			</div> -->
-			
-			<div class="w3-row">
 				<ui:insert name="mainContent" />
-			</div>
 			
 
 			<ui:include src="/WEB-INF/templates/components/newAnimal.xhtml"></ui:include>
 			<ui:include src="/WEB-INF/templates/components/newArticle.xhtml"></ui:include>
 			
-		</div>
 	</h:body>
 </html>

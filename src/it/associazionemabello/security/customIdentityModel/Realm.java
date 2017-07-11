@@ -5,7 +5,7 @@ import org.picketlink.idm.model.annotation.AttributeProperty;
 import org.picketlink.idm.model.annotation.IdentityPartition;
 import org.picketlink.idm.model.basic.*;
 
-@IdentityPartition(supportedTypes = {User.class, Role.class, Group.class})
+@IdentityPartition(supportedTypes = {Application.class, User.class, Role.class, Group.class})
 
 public class Realm extends AbstractPartition{
 
