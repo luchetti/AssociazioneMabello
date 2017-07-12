@@ -1,29 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/WEB-INF/templates/mainContainerTemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-
-<ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
-	<ui:define name="mainContent">
+	<ui:define name="content">
 
 		<!-- NAVIGATION BAR -->
-		<div class="w3-row w3-teal">
-			<div
-				class="w3-left w3-padding w3-button w3-hover-text-teal w3-hover-white">
-				<span class="fa fa-bars fa-2x w3-hover-text-teal"
-					onclick="menuToggle()" />
-			</div>
-			<div class="w3-right w3-padding w3-button w3-hover-white">
-				<h:panelGroup rendered="#{!identity.isLoggedIn()}">
-					<span class="fa fa-sign-in fa-2x w3-hover-text-teal" onclick="$(loginForm).show()" />
-					</h:panelGroup>
-					<h:panelGroup rendered="#{identity.isLoggedIn()}">
-						<span class="fa fa-user-circle fa-2x w3-hover-text-teal" />
-						
-					</h:panelGroup>
-			</div>
-		</div>
 
 		<!-- main container -->
 		<div class="w3-row-padding w3-bottombar">
@@ -50,127 +32,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="w3-row-padding w3-border w3-border-teal">
+		<ui:include src="/WEB-INF/templates/components/donate.xhtml"/>
 
-			<div class="w3-container w3-teal w3-card-2 w3-center w3-xlarge">
-				<p>Aiuta Mabello!</p>
-			</div>
-			<div class="w3-card-4 w3-sand">
-				<div class="w3-bar w3-card-2">
-					<div
-						class="w3-button w3-border w3-col s4 w3-item-bar w3-hover w3-hover-teal w3-hover-text-white"
-						onclick="donateTo('beni')">
-						<p>Beni</p>
-					</div>
-					<div
-						class="w3-button w3-border w3-col s4 w3-item-bar w3-hover w3-hover-teal w3-hover-text-white"
-						onclick="donateTo('postepay')">
-						<p>Postepay</p>
-					</div>
-					<div
-						class="w3-button w3-border w3-col s4 w3-item-bar w3-hover w3-hover-teal w3-hover-text-white"
-						onclick="donateTo('paypal')">
-						<p>Paypal</p>
-					</div>
-
-					<div id="beni" class="w3-container w3-border"
-						style="min-height: 200px">
-						<p class="w3-large">Dona dei beni a Mabello, i cuccioli ti
-							ringrazieranno!</p>
-						<p class="w3-medium">Anche un piccolo dono può essere di
-							grande sostegno. Ecco cosa potresti donare:</p>
-						<div class="w3-center">
-							<ol class="w3-ul w3-medium">
-								<li>Cibo</li>
-								<li>Coperte</li>
-								<li>Antiparassitari</li>
-								<li>Cucce</li>
-								<li>Medicinali</li>
-								<li>Pettorine</li>
-								<li>Altri accessori...</li>
-							</ol>
-						</div>
-						<div class="w3-panel w3-round-medium w3-teal">
-							<p class="w3-large w3-center w3-border-bottom w3-border-white">Contatti:</p>
-							<table class="w3-table w3-large">
-								<tr>
-									<td><p>Info:</p></td>
-									<td><p>
-											<code>associazionemabello@gmail.com</code>
-										</p></td>
-								</tr>
-								<tr>
-									<td><p>Veronica:</p></td>
-									<td><p>
-											<code>3479609784</code>
-										</p></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div id="postepay" class="w3-container w3-border"
-						style="min-height: 200px; display: none">
-						<p class="w3-medium">Se non sai cosa donare oppure non riesci
-							a farlo di persona, non preoccuparti!</p>
-						<p>Puoi fare una donazione tramite versamento su Postapay:</p>
-
-						<div class="w3-panel w3-round-medium w3-teal">
-							<p class="w3-large w3-center w3-border-bottom w3-border-white">Estremi:</p>
-							<table class="w3-table">
-								<tr>
-									<td><p>N° Postepay:</p></td>
-									<td><code>4023 6009 2919 4688</code></td>
-								</tr>
-								<tr>
-									<td><p>Codice Fiscale:</p></td>
-									<td><p>
-											<code>PSS VCC 82 E 53 A 783 U</code>
-										</p></td>
-								</tr>
-								<tr>
-									<td><p>Intestata a:</p></td>
-									<td><p>
-											<code>VERONICA PASSARIELLO</code>
-										</p></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div id="paypal" class="w3-container w3-border"
-						style="min-height: 200px; display: none">
-						<p class="w3-medium">Se preferisci, in alternativa a Postepay,
-							puoi donare tramite PayPal:</p>
-						<div class="w3-panel w3-round-medium w3-teal">
-							<p class="w3-large w3-center w3-border-bottom w3-border-white">Contatti:</p>
-							<table class="w3-table">
-								<tr>
-									<td><p>Info:</p></td>
-									<td><code>associazionemabello@gmail.com</code></td>
-								</tr>
-								<tr>
-									<td><p>Veronica:</p></td>
-									<td><p>
-											<code>3479609784</code>
-										</p></td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="w3-row-padding w3-border w3-border-teal">
 			<h:graphicImage value="/resources/images/mabello-banner.jpg" />
 		</div>
 
-		<div class="w3-row-padding w3-border w3-border-teal"></div>
-
-
-
-
-
-
-
+		<div class="w3-row-padding w3-border w3-border-teal">
+		</div>
 
 		<div class="w3-row-padding w3-border w3-border-teal">
 			<div
@@ -210,54 +79,5 @@
 				</ui:repeat>
 			</div>
 		</div>
-
-
-
-
-
-
-
-		<div class="w3-row">
-			<div class="w3-bottom w3-bar w3-teal">
-				<h:link outcome="index.xhtml" value="Home"
-					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
-				<h:link outcome="scopriMabello.xhtml" value="Scopri Mabello"
-					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
-				<h:link outcome="adotta.xhtml" value="Adotta un cane"
-					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
-				<h:link outcome="donaMabello.xhtml" value="Dona"
-					class="w3-col s3 w3-bar-item w3-button w3-hover-sand" />
-			</div>
-		</div>
-
-		<div id="loginForm" class="w3-modal w3-blue-gray">
-			<div class="w3-modal-content w3-animate-zoom  w3-card-4 w3-round-xlarge" style="max-width: 75%; margin-left:auto; margin-right:auto">
-				<div class="w3-container w3-teal w3-large">
-					<span onclick="$('#loginForm').css('display','none')" class="w3-button w3-display-topright">&times;</span>
-					<p class="w3-xlarge"><i class="fa fa-sign-in fa-2x w3-margin-right" /><b>Accedi</b></p>
-				</div>
-				<div class="w3-container w3-sand">
-				<h:form class="w3-padding">
-						<div class="w3-section">
-							<label><i class="fa fa-user fa-2x w3-margin-right w3-large" /><b>Username</b></label>
-							<h:inputText class="w3-input w3-padding" value="#{loginCredentials.userId}" />
-						</div>
-						<div class="w3-section">
-							<label><i class="fa fa-key fa-2x w3-margin-right w3-large" /><b>Password</b></label>
-							<h:inputSecret class="w3-input w3-padding"
-								value="#{loginCredentials.password}" />
-						</div>
-						<div class="w3-section w3-border-top w3-border-light-grey">
-							<h:commandButton value="Login" class="w3-button w3-teal"
-								action="#{loginAction.login()}" />
-						</div>
-					</h:form>
-				</div>
-
-
-			</div>
-		</div>
 	</ui:define>
 </ui:composition>
-
-</html>

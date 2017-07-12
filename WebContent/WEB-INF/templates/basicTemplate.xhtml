@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -9,37 +9,19 @@
 	xmlns:of="http://omnifaces.org/functions"
 	xmlns:rich="http://richfaces.org/rich">
 
-	<h:head>
-		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-		<h:outputStylesheet library="css" name="w3.css"/>	
-		<h:outputStylesheet library="font-awesome" name="css/font-awesome.css" />
-		<h:outputStylesheet library="css" name="custom.css" target="body"/>	
-		<h:outputScript library="js" name="jquery-3.2.1.js" />
-		<h:outputScript library="js" name="custom.js" target="body"/>
-	</h:head>
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<h:outputStylesheet library="css" name="w3.css" />
+	<h:outputStylesheet library="font-awesome" name="css/font-awesome.css" />
+	<h:outputStylesheet library="css" name="custom.css" target="body" />
+	<h:outputScript library="js" name="jquery-3.2.1.js" />
+	<h:outputScript library="js" name="custom.js" target="body" />
+</h:head>
+
+<h:body class="w3-blue-gray">
+
+	<ui:include src="/WEB-INF/templates/components/firstDiv.xhtml" />
 	
-	<h:body class="w3-blue-gray">
-		
-		<div class="firstDiv parallax w3-display-container w3-teal" id="firstDiv">
-			<ui:include src="/WEB-INF/templates/components/firstDiv.xhtml"></ui:include>
-		</div>
-
-		<ui:include src="/WEB-INF/templates/components/sideBar.xhtml"></ui:include>
-
-			<!-- <div class="w3-row">
-			<button class="w3-btn w3-orange w3-half w3-margin-bottom w3-margin-top" onclick="$('#newArticleSection').css('display','block');">
-				Nuovo articolo
-			</button>
-
-			<button class="w3-btn w3-blue w3-half w3-margin-bottom w3-margin-top" onclick="$('#newAnimalSection').css('display','block');">
-				Nuovo caniello
-			</button>
-			</div> -->
-				<ui:insert name="mainContent" />
-			
-
-			<ui:include src="/WEB-INF/templates/components/newAnimal.xhtml"></ui:include>
-			<ui:include src="/WEB-INF/templates/components/newArticle.xhtml"></ui:include>
-			
-	</h:body>
+	<ui:insert name="mainContainer" />
+</h:body>
 </html>

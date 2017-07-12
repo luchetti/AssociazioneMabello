@@ -7,17 +7,15 @@ html, body {
 @media screen and (max-width: 600px) {
 	.firstDiv {
 		height: 100%;
-		z-index: 1;
+		z-index: 10;
 		display: none;
 	}
 	.bottomArrow, .logo {
 		visibility: visible;
 	}
 	.parallax {
-		height: 200px;
-		
 		/* The image used*/ 
-		background-image: url("#{resource['images/mabello-logo-600.gif']}");
+		/*background-image: url("#{resource['images/mabello-logo-600.gif']}");*/
 		/* Set a specific height */
 		/*min-height: 500px; 
 

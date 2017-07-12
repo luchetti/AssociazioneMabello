@@ -1,0 +1,119 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<div class="w3-row-padding w3-border w3-border-teal">
+
+		<div class="w3-container w3-teal w3-card-2 w3-center w3-xlarge">
+			<p>Aiuta Mabello!</p>
+		</div>
+		<div class="w3-card-4 w3-sand">
+			<div class="w3-bar w3-card-2">
+				<div
+					class="w3-button w3-border w3-col s4 w3-item-bar w3-hover w3-hover-teal w3-hover-text-white"
+					onclick="donateTo('beni')">
+					<p>Beni</p>
+				</div>
+				<div
+					class="w3-button w3-border w3-col s4 w3-item-bar w3-hover w3-hover-teal w3-hover-text-white"
+					onclick="donateTo('postepay')">
+					<p>Postepay</p>
+				</div>
+				<div
+					class="w3-button w3-border w3-col s4 w3-item-bar w3-hover w3-hover-teal w3-hover-text-white"
+					onclick="donateTo('paypal')">
+					<p>Paypal</p>
+				</div>
+
+				<div id="beni" class="w3-container w3-border"
+					style="min-height: 200px">
+					<p class="w3-large">Dona dei beni a Mabello, i cuccioli ti
+						ringrazieranno!</p>
+					<p class="w3-medium">Anche un piccolo dono può essere di grande
+						sostegno. Ecco cosa potresti donare:</p>
+					<div class="w3-center">
+						<ol class="w3-ul w3-medium">
+							<li>Cibo</li>
+							<li>Coperte</li>
+							<li>Antiparassitari</li>
+							<li>Cucce</li>
+							<li>Medicinali</li>
+							<li>Pettorine</li>
+							<li>Altri accessori...</li>
+						</ol>
+					</div>
+					<div class="w3-panel w3-round-medium w3-teal">
+						<p class="w3-large w3-center w3-border-bottom w3-border-white">Contatti:</p>
+						<table class="w3-table w3-large">
+							<tr>
+								<td><p>Info:</p></td>
+								<td><p>
+										<code>associazionemabello@gmail.com</code>
+									</p></td>
+							</tr>
+							<tr>
+								<td><p>Veronica:</p></td>
+								<td><p>
+										<code>3479609784</code>
+									</p></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div id="postepay" class="w3-container w3-border"
+					style="min-height: 200px; display: none">
+					<p class="w3-medium">Se non sai cosa donare oppure non riesci a
+						farlo di persona, non preoccuparti!</p>
+					<p>Puoi fare una donazione tramite versamento su Postapay:</p>
+
+					<div class="w3-panel w3-round-medium w3-teal">
+						<p class="w3-large w3-center w3-border-bottom w3-border-white">Estremi:</p>
+						<table class="w3-table">
+							<tr>
+								<td><p>N° Postepay:</p></td>
+								<td><code>4023 6009 2919 4688</code></td>
+							</tr>
+							<tr>
+								<td><p>Codice Fiscale:</p></td>
+								<td><p>
+										<code>PSS VCC 82 E 53 A 783 U</code>
+									</p></td>
+							</tr>
+							<tr>
+								<td><p>Intestata a:</p></td>
+								<td><p>
+										<code>VERONICA PASSARIELLO</code>
+									</p></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div id="paypal" class="w3-container w3-border"
+					style="min-height: 200px; display: none">
+					<p class="w3-medium">Se preferisci, in alternativa a Postepay,
+						puoi donare tramite PayPal:</p>
+					<div class="w3-panel w3-round-medium w3-teal">
+						<p class="w3-large w3-center w3-border-bottom w3-border-white">Contatti:</p>
+						<table class="w3-table">
+							<tr>
+								<td><p>Info:</p></td>
+								<td><code>associazionemabello@gmail.com</code></td>
+							</tr>
+							<tr>
+								<td><p>Veronica:</p></td>
+								<td><p>
+										<code>3479609784</code>
+									</p></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ui:composition>

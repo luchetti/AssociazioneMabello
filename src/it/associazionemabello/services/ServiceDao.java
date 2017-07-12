@@ -1,5 +1,6 @@
 package it.associazionemabello.services;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -14,8 +15,8 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
+@Stateless
 @Named
-@SessionScoped
 public class ServiceDao implements Serializable {
 
 	private static final long serialVersionUID = 1L;

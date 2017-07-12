@@ -1,0 +1,39 @@
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<div id="loginForm" class="w3-modal w3-blue-gray">
+		<div
+			class="w3-modal-content w3-animate-zoom  w3-card-4 w3-round-xlarge"
+			style="max-width: 75%; margin-left: auto; margin-right: auto">
+			<div class="w3-container w3-teal w3-large">
+				<span onclick="$('#loginForm').css('display','none')"
+					class="w3-button w3-display-topright"><!-- &times; --> X</span>
+				<p class="w3-xlarge">
+					<i class="fa fa-sign-in fa-2x w3-margin-right" /><b>Accedi</b>
+				</p>
+			</div>
+			<div class="w3-container w3-sand">
+				<h:form class="w3-padding">
+					<div class="w3-section">
+						<label><i
+							class="fa fa-user fa-2x w3-margin-right w3-large" /><b>Username</b></label>
+						<h:inputText class="w3-input w3-padding"
+							value="#{loginCredentials.userId}" />
+					</div>
+					<div class="w3-section">
+						<label><i class="fa fa-key fa-2x w3-margin-right w3-large" /><b>Password</b></label>
+						<h:inputSecret class="w3-input w3-padding"
+							value="#{loginCredentials.password}" />
+					</div>
+					<div class="w3-section w3-border-top w3-border-light-grey">
+						<h:commandButton value="Login" class="w3-button w3-teal"
+							action="#{loginAction.login()}" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</ui:composition>

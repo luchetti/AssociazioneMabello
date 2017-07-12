@@ -1,23 +1,44 @@
 package it.associazionemabello.startup;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
-import javax.ejb.Startup;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.omnifaces.cdi.Eager;
+
+import it.associazionemabello.entities.AnimaleEntity;
+import it.associazionemabello.services.ServiceDao;
+import it.associazionemabello.services.daos.AnimaliDao;
+
 @Named
-@Startup
-/*@Eager*/
+@Eager
 @ApplicationScoped
 public class StartupConfiguration {
 	
+	@Inject
+	AnimaliDao dao;
 	
+	private List <AnimaleEntity> listaAnimali;
+	
+	public List<AnimaleEntity> getListaAnimali(){
+		
+		return this.listaAnimali;
+	}
+	
+	private void getList(){
+		this.listaAnimali=dao.retrieveAnimaliList("asc");
+	}
 	
 	
 	@PostConstruct
 	public void init(){
 		System.out.println("Applicazione avviata");
-		
+		System.out.println("Recupero lista animali");
+		getList();
+		System.out.println("Recuperati "+listaAnimali.size()+" animali");
 		/*
 		
 		

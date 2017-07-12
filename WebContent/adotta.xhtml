@@ -1,22 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/WEB-INF/templates/mainContainerTemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:o="http://omnifaces.org/ui"
 	xmlns:of="http://omnifaces.org/functions">
+	<ui:define name="content">
+			
 
-<ui:composition template="/WEB-INF/templates/basicTemplate.xhtml">
-	<ui:define name="mainContent">
-		
-		<div class="w3-container w3-margin w3-teal">
+		<div class="w3-container w3-teal w3-card-4">
+			<i class="fa fa-plus fa-3x w3-teal w3-text-white w3-padding w3-display-topright" onclick="$('#newAnimalSection').css('display','block');" />
 			<h2>Canielli... canielli everywhere</h2>
 		</div>
-		<ui:repeat var="animale" value="#{serviceDao.getAnimaliListAsc()}" varStatus="listIndex">
-			<div class="w3-third w3-padding w3-margin-bottom">
-				<div class="w3-hover-shadow">
-					<div class="w3-container w3-teal w3-border">
-						<h3>#{animale.name}</h3>
+		<ui:repeat var="animale" value="#{startupConfiguration.listaAnimali}" varStatus="listIndex">
+			<div class="w3-col s6 w3-padding w3-round-large">
+				<div class="w3-hover-shadow w3-sand">
+					<div class="w3-container w3-teal w3-card-2">
+						<h4>#{animale.name}</h4>
 					</div>
 					<div class="w3-container w3-border">
 						<o:graphicImage value="#{animale.coverImage}" dataURI="true" />
@@ -29,5 +29,3 @@
 		</ui:repeat>
 	</ui:define>
 </ui:composition>
-
-</html>

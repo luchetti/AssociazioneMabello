@@ -1,0 +1,25 @@
+<ui:composition template = "/WEB-INF/templates/basicTemplate.xhtml" lang="it"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="mainContainer">
+		
+		<ui:include src="/WEB-INF/templates/components/sideBar.xhtml" />
+		<ui:include src="/WEB-INF/templates/components/header.xhtml" />
+		<ui:include src="/WEB-INF/templates/components/loginForm.xhtml" />
+		
+		<ui:insert name="content" />
+		
+		<ui:include src="/WEB-INF/templates/components/newAnimal.xhtml" />
+		<ui:include src="/WEB-INF/templates/components/newArticle.xhtml" />
+		
+		<ui:include src="/WEB-INF/templates/components/footer.xhtml" />
+	</ui:define>
+	
+</ui:composition>

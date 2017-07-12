@@ -9,4 +9,10 @@ import org.picketlink.idm.model.basic.Role;
 @IdentityPartition(supportedTypes = {Role.class, Group.class})
 public class Application extends AbstractIdentityType implements Partition{
 
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

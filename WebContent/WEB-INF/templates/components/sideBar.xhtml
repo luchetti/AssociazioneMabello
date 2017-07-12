@@ -4,53 +4,50 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 	<div
-		class="w3-sidebar w3-bar-block w3-border-right w3-dark-grey w3-card-4"
-		style="display: none; width: 40%" id="sideBar" onmouseleave="$('#sideBar').focusout(menuCLose())">
-		<div class="w3-row w3-border-bottom w3-border-white w3-green">
-			<div class="w3-col s9 m9 l9 w3-text-white w3-large">
-				Accedi/Registrati
-				<!-- <button onclick="menuClose()" class="w3-bar-item w3-large">X</button> -->
-			</div>
-			<div class="w3-col w3-red s3 m3 l3">
-				<div class="w3-right"><span class="fa fa-times-circle fa-2x w3-padding"
-					onclick="menuClose()" /></div>
-			</div>
+		class="w3-sidebar w3-bar-block w3-border-right w3-blue-grey w3-card-4"
+		style="display: none; width: 40%" id="sideBar">
+		<div
+			class="w3-left w3-teal w3-padding w3-button w3-hover-text-teal w3-hover-white">
+			<span class="fa fa-bars fa-2x w3-hover-text-teal"
+				onclick="menuToggle()" />
 		</div>
-	<h:link outcome="index.xhtml" value="Home"
-		class="w3-bar-item w3-button w3-hover-teal w3-padding w3-margin-top" />
-	<h:link outcome="scopriMabello.xhtml" value="Scopri Mabello"
-		class="w3-bar-item w3-button w3-hover-teal w3-padding" />
-	<h:link outcome="adotta.xhtml" value="Adotta un cane"
-		class="w3-bar-item w3-button w3-hover-teal w3-padding" />
-	<h:link outcome="donaMabello.xhtml" value="Dona"
-		class="w3-bar-item w3-button w3-hover-teal w3-border-bottom w3-border-white w3-padding w3-margin-bottom" />
 
-	<div
-		class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-khaki w3-text-white w3-margin-top">
-		<div class="w3-center">
-			<a href="#"><span class="fa fa-instagram fa-2x" /></a>
+		<h:link outcome="index.xhtml" value="Home"
+			class="w3-bar-item w3-button w3-hover-teal w3-padding w3-margin-top" />
+		<h:link outcome="scopriMabello.xhtml" value="Scopri Mabello"
+			class="w3-bar-item w3-button w3-hover-teal w3-padding" />
+		<h:link outcome="adotta.xhtml" value="Adotta un cane"
+			class="w3-bar-item w3-button w3-hover-teal w3-padding" />
+		<h:link outcome="donaMabello.xhtml" value="Dona"
+			class="w3-bar-item w3-button w3-hover-teal w3-border-bottom w3-border-white w3-padding w3-margin-bottom" />
+
+		<div
+			class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-khaki w3-text-white w3-margin-top">
+			<div class="w3-center">
+				<a href="#"><span class="fa fa-instagram fa-2x" /></a>
+			</div>
 		</div>
-	</div>
-	<div
-		class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-indigo">
-		<div class="w3-center">
-			<a
-				href="https://www.facebook.com/Associazione-Mabello-1081475771868383/"><span
-				class="fa fa-facebook-square fa-2x" /></a>
+		<div
+			class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-indigo">
+			<div class="w3-center">
+				<a
+					href="https://www.facebook.com/Associazione-Mabello-1081475771868383/"><span
+					class="fa fa-facebook-square fa-2x" /></a>
+			</div>
 		</div>
-	</div>
-	<div class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-red">
-		<div class="w3-center">
-			<a href="#"><span class="fa fa-google-plus-square fa-2x" /></a>
+		<div
+			class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-red">
+			<div class="w3-center">
+				<a href="#"><span class="fa fa-google-plus-square fa-2x" /></a>
+			</div>
 		</div>
-	</div>
-	<div
-		class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-light-blue">
-		<div class="w3-center">
-			<a href="#"><span
-				class="fa fa-twitter-square fa-2x w3-text-white" /></a>
+		<div
+			class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-hover-light-blue">
+			<div class="w3-center">
+				<a href="#"><span
+					class="fa fa-twitter-square fa-2x w3-text-white" /></a>
+			</div>
 		</div>
-	</div>
 	</div>
 
 </ui:composition>

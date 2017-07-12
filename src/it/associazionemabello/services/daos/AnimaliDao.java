@@ -2,7 +2,7 @@ package it.associazionemabello.services.daos;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -11,15 +11,15 @@ import javax.transaction.UserTransaction;
 
 import it.associazionemabello.entities.AnimaleEntity;
 
+@Stateless
 @Named
-@RequestScoped
 public class AnimaliDao {
 
 	@PersistenceContext(name="mabelloMysql")
 	EntityManager em;
 	
-	@Inject
-	UserTransaction ut;
+	/*@Inject
+	UserTransaction ut;*/
 	
 	public List<AnimaleEntity> retrieveAnimaliList(String order){
 		return em.createQuery("Select a from AnimaleEntity a ORDER BY a.name "+order, AnimaleEntity.class).getResultList();
@@ -27,9 +27,9 @@ public class AnimaliDao {
 	
 	public boolean insertNewAnimal(AnimaleEntity animale){
 		try{
-			ut.begin();
+			/*ut.begin();*/
 			em.persist(animale);
-			ut.commit();
+			/*ut.commit();*/
 			return true;
 		}
 		catch(Exception ex){
