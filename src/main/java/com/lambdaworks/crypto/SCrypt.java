@@ -2,10 +2,11 @@
 
 package com.lambdaworks.crypto;
 
-import com.lambdaworks.jni.*;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+
+import com.lambdaworks.jni.*;
+
 import java.security.GeneralSecurityException;
 
 import static java.lang.Integer.MAX_VALUE;
