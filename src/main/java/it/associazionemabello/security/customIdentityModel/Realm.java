@@ -23,9 +23,9 @@ public class Realm extends AbstractPartition{
 	@AttributeProperty
 	private byte[] privateKey;
 	
-	private Realm(){
+	/*private Realm(){
 		this(null);
-	}
+	}*/
 	public Realm(String name){
 		super(name);
 	}

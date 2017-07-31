@@ -1,12 +1,9 @@
 package it.associazionemabello.security;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
-import javax.enterprise.inject.Produces;
 
 import org.picketlink.event.PartitionManagerCreateEvent;
-import org.picketlink.annotations.PicketLink;
 import org.picketlink.idm.PartitionManager;
 import org.picketlink.idm.config.IdentityConfigurationBuilder;
 import org.picketlink.idm.internal.DefaultPartitionManager;

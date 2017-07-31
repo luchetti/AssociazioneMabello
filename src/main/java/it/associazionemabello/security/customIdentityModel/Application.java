@@ -9,9 +9,13 @@ import org.picketlink.idm.model.basic.Role;
 @IdentityPartition(supportedTypes = {Role.class, Group.class})
 public class Application extends AbstractIdentityType implements Partition{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

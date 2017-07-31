@@ -10,7 +10,6 @@ import javax.inject.Named;
 import org.omnifaces.cdi.Eager;
 
 import it.associazionemabello.entities.AnimaleEntity;
-import it.associazionemabello.services.ServiceDao;
 import it.associazionemabello.services.daos.AnimaliDao;
 
 @Named

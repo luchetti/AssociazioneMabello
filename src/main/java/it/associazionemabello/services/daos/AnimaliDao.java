@@ -3,11 +3,9 @@ package it.associazionemabello.services.daos;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
 
 import it.associazionemabello.entities.AnimaleEntity;
 

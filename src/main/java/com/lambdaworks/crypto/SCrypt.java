@@ -4,7 +4,7 @@ package com.lambdaworks.crypto;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-
+import com.lambdaworks.crypto.PBKDF;
 import com.lambdaworks.jni.*;
 
 import java.security.GeneralSecurityException;
