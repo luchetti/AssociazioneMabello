@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.picketlink.idm.jpa.annotations.AttributeValue;
 import org.picketlink.idm.jpa.annotations.Identifier;
+import org.picketlink.idm.jpa.annotations.IdentityClass;
 import org.picketlink.idm.jpa.annotations.entity.IdentityManaged;
 import org.picketlink.idm.model.basic.User;
 
@@ -21,18 +23,23 @@ public class UserEntity extends User {
 
 	@Id
 	@Identifier
+	@IdentityClass
 	@Column (name ="users_username")
 	private String username;
 	
+	@AttributeValue
 	@Column (name ="users_password")
 	private String password;
 	
+	@AttributeValue
 	@Column(name ="users_registerTime")
 	private Date registerTime;
 	
+	@AttributeValue
 	@Column(name ="users_lastAccess")
 	private Date lastAccess;
 	
+	@AttributeValue
 	@Column(name ="users_expirationDate")
 	private Date expirationDate;
 

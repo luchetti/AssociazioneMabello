@@ -41,9 +41,7 @@ public class ArticoliDao {
 	
 	public boolean deleteArticicle(int id){
 		try{
-			ut.begin();
 			em.remove(em.find(ArticoloEntity.class, id));
-			ut.commit();
 			return true;
 		}
 		catch(Exception ex){
