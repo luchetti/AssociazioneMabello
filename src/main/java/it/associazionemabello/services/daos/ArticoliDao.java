@@ -2,24 +2,20 @@ package it.associazionemabello.services.daos;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
 
 import it.associazionemabello.entities.ArticoloEntity;
 
 @Named
-@RequestScoped
+@Stateless
 public class ArticoliDao {
 
 	@PersistenceContext(name="mabelloMysql")
 	EntityManager em;
 	
-	@Inject
-	UserTransaction ut;
 	public List<ArticoloEntity> retrieveArticlesList(String order){
 		
 		return em.createQuery("select a from ArticoloEntity a ORDER BY a.creationTime "+order, ArticoloEntity.class).getResultList();
@@ -28,9 +24,7 @@ public class ArticoliDao {
 	
 	public boolean insertNewArticicle(ArticoloEntity articolo){
 		try{
-			ut.begin();
 			em.persist(articolo);
-			ut.commit();
 			return true;
 		}
 		catch(Exception ex){
@@ -49,6 +43,4 @@ public class ArticoliDao {
 			return false;
 		}
 	}
-	
-	
 }

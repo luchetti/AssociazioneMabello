@@ -11,7 +11,9 @@ import org.picketlink.idm.jpa.annotations.AttributeValue;
 import org.picketlink.idm.jpa.annotations.Identifier;
 import org.picketlink.idm.jpa.annotations.IdentityClass;
 import org.picketlink.idm.jpa.annotations.entity.IdentityManaged;
+import org.picketlink.idm.model.AttributedType.QUERY_ATTRIBUTE;
 import org.picketlink.idm.model.basic.User;
+import org.picketlink.idm.query.QueryParameter;
 
 
 @IdentityManaged(User.class)
@@ -21,6 +23,8 @@ public class UserEntity extends User {
 
 	private static final long serialVersionUID = 1L;
 
+	public static final QueryParameter LOGIN_NAME = QUERY_ATTRIBUTE.byName("username");
+	
 	@Id
 	@Identifier
 	@IdentityClass
