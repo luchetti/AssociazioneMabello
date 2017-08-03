@@ -17,6 +17,8 @@ import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.PartitionManager;
 import org.picketlink.idm.RelationshipManager;
 import org.picketlink.idm.credential.Credentials.Status;
+import org.picketlink.idm.credential.Password;
+import org.picketlink.idm.credential.UsernamePasswordCredentials;
 import org.picketlink.idm.model.basic.BasicModel;
 import org.picketlink.idm.model.basic.User;
 import org.picketlink.idm.query.IdentityQueryBuilder;
@@ -29,15 +31,10 @@ import it.associazionemabello.services.daos.SecurityDao;
 @RequestScoped
 public class SimpleAuthenticator extends BaseAuthenticator {
 
-	@Inject
-	PartitionManager partitionManager;
-	
+	PartitionTypeEntity dd;
 	@Inject
 	IdentityManager identityManager;
-	
-	@Inject
-	RelationshipManager relationshipManager;
-	
+
 	@Inject
 	Identity identity;
 	
@@ -53,7 +50,10 @@ public class SimpleAuthenticator extends BaseAuthenticator {
 		System.out.println("CREDENTIAL");
 		System.out.println("Username: "+loginCredentials.getUserId());
 		System.out.println("Password: "+loginCredentials.getPassword());
-		identityManager.validateCredentials(loginCredentials);
+		
+		UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(loginCredentials.getUserId(), new Password(loginCredentials.getPassword()));
+		
+		identityManager.validateCredentials(credentials);
 	}
 	
 	@Override

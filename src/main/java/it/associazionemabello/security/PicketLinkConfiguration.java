@@ -9,17 +9,20 @@ import javax.persistence.PersistenceContext;
 import org.picketlink.annotations.PicketLink;
 import org.picketlink.idm.PartitionManager;
 import org.picketlink.idm.config.IdentityConfigurationBuilder;
+import org.picketlink.idm.credential.UsernamePasswordCredentials;
+import org.picketlink.idm.credential.handler.PasswordCredentialHandler;
 import org.picketlink.idm.internal.DefaultPartitionManager;
 import org.picketlink.idm.model.basic.User;
 import org.picketlink.internal.EntityManagerContextInitializer;
 
+import it.associazionemabello.entities.CredentialEntity;
 import it.associazionemabello.entities.UserEntity;
 
 @ApplicationScoped
 public class PicketLinkConfiguration {
 
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager entityManager; 
 	
 	@Inject
 	private EntityManagerContextInitializer contextInitializer;
@@ -37,16 +40,23 @@ public class PicketLinkConfiguration {
 		
 		final IdentityConfigurationBuilder builder = new IdentityConfigurationBuilder();
 		
-		builder.named("jpa.config")
+		/*builder.named("jpa.config")
 			.stores()
 			.jpa()
+			.addCredentialHandler(PasswordCredentialHandler.class)
 			.mappedEntity(
-					UserEntity.class)
+					UserEntity.class,
+					CredentialEntity.class)
 			.addContextInitializer(this.contextInitializer)
 			.supportType(
 					User.class)
-			.supportGlobalRelationship()
 			.supportCredentials(true);
+			*/
+		
+		builder.named("jpa.config")
+		.stores()
+		.jpa().supportAllFeatures();
+		
 		
 		return new DefaultPartitionManager(builder.build());
 		

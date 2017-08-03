@@ -1,22 +1,30 @@
 package it.associazionemabello.authentication;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import org.picketlink.idm.credential.AbstractBaseCredentials;
+import org.picketlink.idm.credential.Credentials;
 import org.picketlink.idm.credential.Password;
 
-@Named
-@RequestScoped
-public class Credentials extends AbstractBaseCredentials {
+import java.io.Serializable;
 
+@Named(value ="credentials")
+@SessionScoped
+public class LoginCredentials extends AbstractBaseCredentials implements Serializable, Credentials {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private Password password;
 	
-	public Credentials(){
+	public LoginCredentials(){
 		
 	}
-	public Credentials (String username, Password password){
+	public LoginCredentials (String username, Password password){
 		this.username=username;
 		this.password=password;
 	}
@@ -29,7 +37,7 @@ public class Credentials extends AbstractBaseCredentials {
 		this.username=username;
 	}
 	
-	public Password password() {
+	public Password getPassword() {
 		return password;
 	}
 	

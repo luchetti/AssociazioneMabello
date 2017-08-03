@@ -1,6 +1,5 @@
 package it.associazionemabello.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,95 +25,84 @@ import org.picketlink.idm.model.annotation.Unique;
 import org.picketlink.idm.model.basic.User;
 import org.picketlink.idm.query.QueryParameter;
 
+@IdentityStereotype(Stereotype.USER)
 @IdentityManaged(User.class)
 @Entity
-@Table(name ="mabello_authentication_usersNEW")
-public class UserEntity extends User implements Serializable{
+@Table(name ="mabello_authentication_users")
+public class UserEntityOLD extends User {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final QueryParameter LOGIN_NAME = QUERY_ATTRIBUTE.byName("loginName");
+	public static final QueryParameter LOGIN_NAME = QUERY_ATTRIBUTE.byName("username");
 	
 	@Id
 	@Identifier
-	@Column (name ="users_id")
-	private String id;
-	
 	@IdentityClass
-	@Column (name ="users_typeName")
-	private String typeName;
+	@AttributeProperty
+	@Unique
+	@StereotypeProperty(Property.IDENTITY_USER_NAME)
+	@Column (name ="users_username")
+	private String username;
 	
 	@AttributeValue
-	@Column(name ="users_loginName")
-	private String loginName;
+	@Column (name ="users_password")
+	private String password;
 	
 	@AttributeValue
-	@Column(name ="users_createdTime")
-	private Date createdTime;
+	@Column(name ="users_registerTime")
+	private Date registerTime;
 	
+	@AttributeValue
+	@Column(name ="users_lastAccess")
+	private Date lastAccess;
+	
+	@ExpiryDate
 	@AttributeValue
 	@Column(name ="users_expirationDate")
 	private Date expirationDate;
 
-	@AttributeValue
-	private boolean enabled;
-	
-	
+	@Override
+	public String toString(){
+		return "User [Username: "+this.username+"; Register Time: "+this.registerTime+"; Last Access: "+this.lastAccess+"; Expiration Date: "+this.expirationDate+"]";
+		
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setPassword(String password){
+		this.password=password;
+	}
+	public String getPassword(){
+		return this.password;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Date getRegisterTime() {
+		return registerTime;
+	}
+
+	public void setRegisterTime(Date registerTime) {
+		this.registerTime = registerTime;
+	}
+
+	public Date getLastAccess() {
+		return lastAccess;
+	}
+
+	public void setLastAccess(Date lastAccess) {
+		this.lastAccess = lastAccess;
+	}
+
 	public Date getExpirationDate() {
 		return expirationDate;
 	}
 
 	public void setExpirationDate(Date expirationDate) {
 		this.expirationDate = expirationDate;
-	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-
-	public String getTypeName() {
-		return typeName;
-	}
-
-
-	public void setTypeName(String typeName) {
-		this.typeName = typeName;
-	}
-
-
-	public String getLoginName() {
-		return loginName;
-	}
-
-
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-	}
-
-
-	public Date getCreatedTime() {
-		return createdTime;
-	}
-
-
-	public void setCreatedTime(Date createdTime) {
-		this.createdTime = createdTime;
-	}
-
-
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
 	}
 }
