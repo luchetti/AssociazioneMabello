@@ -15,8 +15,8 @@ import org.picketlink.idm.internal.DefaultPartitionManager;
 import org.picketlink.idm.model.basic.User;
 import org.picketlink.internal.EntityManagerContextInitializer;
 
-import it.associazionemabello.entities.CredentialEntity;
-import it.associazionemabello.entities.UserEntity;
+import it.associazionemabello.model.entities.CredentialEntity;
+import it.associazionemabello.model.entities.UserEntity;
 
 @ApplicationScoped
 public class PicketLinkConfiguration {

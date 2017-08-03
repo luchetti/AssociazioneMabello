@@ -9,7 +9,7 @@ import javax.servlet.http.Part;
 import org.apache.commons.io.IOUtils;
 import org.omnifaces.util.Servlets;
 
-import it.associazionemabello.entities.AnimaleEntity;
+import it.associazionemabello.model.entities.AnimaleEntity;
 import it.associazionemabello.services.ServiceDao;
 
 

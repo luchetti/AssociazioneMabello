@@ -1,4 +1,4 @@
-package it.associazionemabello.entities;
+package it.associazionemabello.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

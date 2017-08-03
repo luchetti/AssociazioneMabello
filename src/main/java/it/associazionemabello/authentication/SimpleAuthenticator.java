@@ -23,7 +23,7 @@ import org.picketlink.idm.model.basic.BasicModel;
 import org.picketlink.idm.model.basic.User;
 import org.picketlink.idm.query.IdentityQueryBuilder;
 
-import it.associazionemabello.entities.UserEntity;
+import it.associazionemabello.model.entities.UserEntity;
 import it.associazionemabello.services.daos.SecurityDao;
 
 @PicketLink
@@ -31,7 +31,6 @@ import it.associazionemabello.services.daos.SecurityDao;
 @RequestScoped
 public class SimpleAuthenticator extends BaseAuthenticator {
 
-	PartitionTypeEntity dd;
 	@Inject
 	IdentityManager identityManager;
 

@@ -5,8 +5,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import it.associazionemabello.entities.AnimaleEntity;
-import it.associazionemabello.entities.ArticoloEntity;
+import it.associazionemabello.model.entities.AnimaleEntity;
+import it.associazionemabello.model.entities.ArticoloEntity;
 import it.associazionemabello.services.daos.AnimaliDao;
 import it.associazionemabello.services.daos.ArticoliDao;
 

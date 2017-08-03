@@ -1,4 +1,4 @@
-package it.associazionemabello.entities;
+package it.associazionemabello.model.entities;
 
 import java.util.Date;
 
@@ -27,7 +27,6 @@ import org.picketlink.idm.query.QueryParameter;
 
 @IdentityStereotype(Stereotype.USER)
 @IdentityManaged(User.class)
-@Entity
 @Table(name ="mabello_authentication_users")
 public class UserEntityOLD extends User {
 

@@ -1,4 +1,4 @@
-package it.associazionemabello.entities;
+package it.associazionemabello.model.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +18,7 @@ import org.picketlink.idm.jpa.annotations.OwnerReference;
 import org.picketlink.idm.jpa.annotations.entity.ManagedCredential;
 
 @ManagedCredential (EncodedPasswordStorage.class)
-@Entity
+
 
 public class CredentialEntity implements Serializable {
 

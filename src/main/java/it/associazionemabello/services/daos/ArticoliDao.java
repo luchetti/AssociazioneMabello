@@ -7,7 +7,7 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import it.associazionemabello.entities.ArticoloEntity;
+import it.associazionemabello.model.entities.ArticoloEntity;
 
 @Named
 @Stateless

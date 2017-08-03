@@ -1,30 +1,61 @@
 package it.associazionemabello.services.daos;
 
+import java.util.List;
+
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
-import it.associazionemabello.entities.ArticoloEntity;
-import it.associazionemabello.entities.UserEntity;
+import it.associazionemabello.model.entities.ArticoloEntity;
+import it.associazionemabello.model.entities.UserEntity;
 
-@Named
-@RequestScoped
+
+@Stateless
 public class SecurityDao {
 
 	@PersistenceContext(name="mabelloMysql")
-	EntityManager em;
+	private EntityManager em;
 
-	public UserEntity findUser(String username){
-		try{
-			TypedQuery<UserEntity> query = em.createQuery("select u from UserEntity u WHERE u.username = :username", UserEntity.class);
-			return query.setParameter("username", username).getSingleResult();
-		}catch(NoResultException ex){
-			return null;
-		}
+	
+	public UserEntity findUser(Long id){
+		return em.find(UserEntity.class, id);
 	}
+	public UserEntity findUser(String username, String password){
+		
+		List<UserEntity> user = em.createNamedQuery("User.find", UserEntity.class)
+				.setParameter("username", username)
+				.setParameter("password", password)
+				.getResultList();
+		
+		return user.isEmpty() ? null : user.get(0);
+
+	}
+	
+	@Produces
+	@Named ("userList")
+	@RequestScoped
+	public List<UserEntity> list(){
+		return em.createNamedQuery("User.list", UserEntity.class).getResultList();
+	}
+	
+	public Long newUser(UserEntity user){
+		em.persist(user);
+		return user.getId();
+	}
+	
+	public void updateUser (UserEntity user){
+		em.merge(user);
+	}
+	
+	public void deleteUser(UserEntity user){
+		em.remove(em.contains(user) ? user : em.merge(user));
+	}
+	
+	
+	
 	
 	public boolean insertNewArticicle(ArticoloEntity articolo){
 		try{
